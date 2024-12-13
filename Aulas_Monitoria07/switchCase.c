@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <conio.h>
+
 
 int valor;
 
 int	main()
 {
   
-    printf("Digite um valor de 1 a 7:");
+    printf("Digite um valor de 1 a 6:");
     scanf("%d",&valor);
 
     switch (valor){
@@ -34,7 +36,7 @@ int	main()
             break; 
 
         default:
-            printf("----- FORA DO CASO ----- \n");
+             printf ("------ Valor invalido! ------\n");
             break;
 
     }
