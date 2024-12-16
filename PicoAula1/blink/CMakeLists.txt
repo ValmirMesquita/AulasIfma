@@ -50,6 +50,3 @@ endif()
 pico_add_extra_outputs(blink)
 
 # add url via pico_set_program_url
-
-pico_enable_stdio_usb(main 1)
-pico_enable_stdio_uart(main 0) 
