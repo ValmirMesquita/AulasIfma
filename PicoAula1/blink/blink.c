@@ -16,7 +16,7 @@
 
 #ifndef LED_DELAY_MS
 #define LED_DELAY_MS 5000
-#define LED_DELAY_MS2 500
+#define LED_DELAY_MS2 100
 #endif
 
 // Perform initialisation
@@ -47,8 +47,8 @@ void pico_set_led(bool led_on) {
 int main() {
 
     stdio_init_all();
-
     int rc = pico_led_init();
+    
     hard_assert(rc == PICO_OK);
     while (true) {
         pico_set_led(true);
@@ -59,6 +59,9 @@ int main() {
         sleep_ms(LED_DELAY_MS);
         printf("LED DESLIGADO <<<<<<");
 
+    for (int i = 0; i < 20; i++)
+    {
+        
 
         pico_set_led(true);
         sleep_ms(LED_DELAY_MS2);
@@ -68,12 +71,14 @@ int main() {
         sleep_ms(LED_DELAY_MS2);
         printf("LED DESLIGADO <<<<<<");
 
-        pico_set_led(true);
-        sleep_ms(LED_DELAY_MS2);
-        printf("LED LIGADO >>>>>>");
+        // pico_set_led(true);
+        // sleep_ms(LED_DELAY_MS2);
+        // printf("LED LIGADO >>>>>>");
 
-        pico_set_led(false);
-        sleep_ms(LED_DELAY_MS2);
-        printf("LED DESLIGADO <<<<<<");
+        // pico_set_led(false);
+        // sleep_ms(LED_DELAY_MS2);
+        // printf("LED DESLIGADO <<<<<<");
     }
+    }
+    
 }
