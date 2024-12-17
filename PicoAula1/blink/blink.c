@@ -7,6 +7,7 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
+
 // Pico W devices use a GPIO on the WIFI chip for the LED,
 // so when building for Pico W, CYW43_WL_GPIO_LED_PIN will be defined
 #ifdef CYW43_WL_GPIO_LED_PIN
@@ -14,7 +15,8 @@
 #endif
 
 #ifndef LED_DELAY_MS
-#define LED_DELAY_MS 2000
+#define LED_DELAY_MS 5000
+#define LED_DELAY_MS2 500
 #endif
 
 // Perform initialisation
@@ -55,6 +57,23 @@ int main() {
 
         pico_set_led(false);
         sleep_ms(LED_DELAY_MS);
+        printf("LED DESLIGADO <<<<<<");
+
+
+        pico_set_led(true);
+        sleep_ms(LED_DELAY_MS2);
+        printf("LED LIGADO >>>>>>");
+
+        pico_set_led(false);
+        sleep_ms(LED_DELAY_MS2);
+        printf("LED DESLIGADO <<<<<<");
+
+        pico_set_led(true);
+        sleep_ms(LED_DELAY_MS2);
+        printf("LED LIGADO >>>>>>");
+
+        pico_set_led(false);
+        sleep_ms(LED_DELAY_MS2);
         printf("LED DESLIGADO <<<<<<");
     }
 }
