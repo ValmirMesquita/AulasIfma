@@ -46,7 +46,9 @@ pico_enable_stdio_usb(display_oled 1)
 
 # Add the standard library to the build
 target_link_libraries(display_oled
-        pico_stdlib)
+        pico_stdlib
+        hardware_pwm)
+        
 
 # Add the standard include files to the build
 target_include_directories(display_oled PRIVATE
