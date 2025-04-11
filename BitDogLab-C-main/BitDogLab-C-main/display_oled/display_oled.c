@@ -54,8 +54,10 @@ restart:
     {
         ssd1306_draw_string(ssd, 5, y, text[i]);
         y += 8;
+        
     }
     render_on_display(ssd, &frame_area);
+    sleep_ms(10000);
 // */
 
 // Parte do código para exibir a linha no display (algoritmo de Bresenham)
@@ -140,7 +142,8 @@ restart:
     ssd1306_t ssd_bm;
     ssd1306_init_bm(&ssd_bm, 128, 64, false, 0x3C, i2c1);
     ssd1306_config(&ssd_bm);
-    sleep_ms(10000);   
+
+      
 
     ssd1306_draw_bitmap(&ssd_bm, bitmap_128x64);
 
