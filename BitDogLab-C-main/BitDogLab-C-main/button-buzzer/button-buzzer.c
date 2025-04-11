@@ -8,7 +8,7 @@
 #define BUZZER_PIN 21
 
 // Configuração da frequência do buzzer (em Hz)
-#define BUZZER_FREQUENCY 100
+#define BUZZER_FREQUENCY 8000
 
 // Definição de uma função para inicializar o PWM no pino do buzzer
 void pwm_init_buzzer(uint pin) {

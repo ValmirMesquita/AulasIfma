@@ -45,7 +45,9 @@ restart:
 // /**
     char *text[] = {
         "  Bem-vindos!   ",
-        "  Embarcatech   "};
+        "  Embarcatech   ",
+        "  Aulas inicio  ",
+        "  22 05 2025"    };
 
     int y = 0;
     for (uint i = 0; i < count_of(text); i++)
@@ -57,13 +59,13 @@ restart:
 // */
 
 // Parte do código para exibir a linha no display (algoritmo de Bresenham)
-/**
+
     ssd1306_draw_line(ssd, 10, 10, 100, 50, true);
     render_on_display(ssd, &frame_area);
-*/
+
 
 // Parte do código para exibir o bitmap no display
-/**
+
     const uint8_t bitmap_128x64[] = { 
  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
@@ -138,9 +140,10 @@ restart:
     ssd1306_t ssd_bm;
     ssd1306_init_bm(&ssd_bm, 128, 64, false, 0x3C, i2c1);
     ssd1306_config(&ssd_bm);
+    sleep_ms(10000);   
 
     ssd1306_draw_bitmap(&ssd_bm, bitmap_128x64);
-*/
+
 
     while(true) {
         sleep_ms(1000);
