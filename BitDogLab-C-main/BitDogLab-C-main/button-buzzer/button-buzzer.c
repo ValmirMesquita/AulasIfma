@@ -47,6 +47,8 @@ void beep(uint pin, uint duration_ms) {
 
 int main() {
     // Configuração do GPIO para o botão como entrada com pull-up
+    stdio_init_all();
+
     const uint BUTTON_PIN = 5;  // Pino do botão
     gpio_init(BUTTON_PIN);
     gpio_set_dir(BUTTON_PIN, GPIO_IN);
@@ -60,7 +62,8 @@ int main() {
     while (true) {
         // Verifica o estado do botão
         if (gpio_get(BUTTON_PIN) == 0) {  // Botão pressionado (nível lógico baixo)
-            printf("Button pressed\n");
+            printf("Botão precinado\n");
+            printf("Area liberada\n");
             beep(BUZZER_PIN, 1000); // Bipe de 500ms     // Liga o buzzer
                          // Aguarda 1 segundo
         }
